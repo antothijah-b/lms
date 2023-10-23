@@ -9,7 +9,7 @@ class Instructor(models.Model):
     dob = models.DateField(null=False)
     address = models.CharField(max_length=100)
     contactNumber = models.CharField(max_length=10)
-    # profilePicture = models.ImageField(null=True, blank=True, upload_to="images/")
+    profilePicture = models.ImageField(null=True, blank=True, upload_to="images/", default=1)
     verificationStatus = models.CharField(max_length=100)
     class Meta:
         verbose_name_plural = "Instructor"
@@ -26,7 +26,7 @@ class Student(models.Model):
     dob = models.DateField(null=False)
     address = models.CharField(max_length=100)
     contactNumber = models.CharField(max_length=10)
-    # profilePicture = models.ImageField(null=True, blank=True, upload_to="images/")
+    profilePicture = models.ImageField(null=True, blank=True, upload_to="images/", default=1)
     verificationStatus = models.CharField(max_length=100)
     class Meta:
         verbose_name_plural = "Student"

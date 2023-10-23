@@ -5,13 +5,13 @@ from . import models
 class IntructorSerailizer(serializers.ModelSerializer):
     class Meta:
         model = models.Instructor
-        fields = ['id', 'firstName', 'lastName', 'email', 'password', 'dob', 'address', 'contactNumber', 'verificationStatus']
+        fields = ['id', 'firstName', 'lastName', 'email', 'password', 'dob', 'address', 'contactNumber', 'profilePicture', 'verificationStatus']
 
 # Serializer for Student
 class StudentSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Student
-        fields = ['id', 'firstName', 'lastName', 'email', 'password', 'dob', 'address', 'contactNumber', 'verificationStatus']
+        fields = ['id', 'firstName', 'lastName', 'email', 'password', 'dob', 'address', 'contactNumber', 'profilePicture' ,'verificationStatus']
 
 # Serializer for Category
 class CategorySerializer(serializers.ModelSerializer):
