@@ -104,9 +104,12 @@ class Material(models.Model):
     description = models.TextField()
     fk_content = models.ForeignKey(Content, on_delete=models.CASCADE, verbose_name="content")
     uploadDate = models.DateField(null=False)
-    # fileLocation = models.CharField(max_length=200)
+    fileMaterial = models.FileField(null=True, blank=True, upload_to="video%y", default=1)
     class Meta:
         verbose_name_plural = "Material"
+    
+    def __str__(self):
+        return self.materialTitle
 
 # FAQ Model here.
 class Faq(models.Model):

@@ -47,7 +47,7 @@ class ContentSerializer(serializers.ModelSerializer):
 class MaterialSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Material
-        fields = ['id', 'materialTitle', 'description', 'fk_content', 'uploadDate']
+        fields = ['id', 'materialTitle', 'description', 'fk_content', 'fileMaterial', 'uploadDate']
 
 # Serializer for Faq
 class FaqSerialzer(serializers.ModelSerializer):

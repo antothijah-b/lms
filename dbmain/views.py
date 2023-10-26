@@ -110,3 +110,25 @@ class QuizesList(generics.ListCreateAPIView):
 class QuizesDetails(generics.RetrieveUpdateDestroyAPIView):
     queryset = models.Quizes.objects.all()
     serializer_class = serializers.QuizesSerializer
+
+
+
+# Code that does idk what
+from django.views.decorators.csrf import csrf_exempt
+from django.http import JsonResponse
+
+def login(request):
+    email = request.POST.get('email', '')
+    password = request.POST.get('password', '')
+ 
+    # Check if the user is an Instructor
+    instructor_data = models.Instructor.objects.filter(email=email, password=password)
+    if instructor_data.exists():
+        return JsonResponse({'user_type': 'instructor'})
+ 
+    # Check if the user is a Student
+    student_data = models.Student.objects.filter(email=email, password=password)
+    if student_data.exists():
+        return JsonResponse({'user_type': 'student'})
+ 
+    return JsonResponse({'user_type': 'none'})
